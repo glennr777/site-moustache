@@ -1,0 +1,43 @@
+/* Reviews */
+#reviews {
+  padding: 4em 0;
+  @media(--medium-device) {
+    padding: 3em 0;
+  }
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 auto;
+
+  & .review-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0 20px;
+    @media(--medium-device) {
+      flex-direction: column;
+      padding: 0;
+    }
+    & li {
+      flex: 1 1 50%;
+      & blockquote {
+        font-style: italic;
+      }
+      & a {
+        color: var(--clr-3);
+        font-weight: bold;
+      }
+      @media(--small-device) {
+        padding: 0 0 1em 0;
+        &::after {
+          display: block;
+          content: '';
+          margin: 1em auto 0 auto;
+          width: 3em;
+          height: 0px;
+          border: 1px solid var(--clr-3);
+        }
+      }
+    }
+  }
+}

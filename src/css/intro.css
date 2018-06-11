@@ -1,0 +1,27 @@
+#intro {
+  height: 70vh;
+  display: flex;
+  flex: 1 1 auto;
+  background-image: url('./img/backgrounds/1920x1080/01.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  @media(--small-device) {
+    height: 30vh;
+    background-position: top;
+    background-size: 100%;
+  }
+  & .header-content {
+    color: var(--clr-10);
+    text-align: center;
+    background: var(--clr-1-a);
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    @media(--small-device) {
+      max-width: 75%;
+    }
+  }
+}

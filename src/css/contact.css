@@ -1,0 +1,35 @@
+/* Contact */
+#contact {
+  padding: 0;
+  @media(--small-device) {
+    padding: 3em 0;
+  }
+  & .container-header {
+    margin: auto;
+  }
+  & .contact-section {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em 0;
+    @media(--small-device) {
+      max-width: 90%;
+      flex-direction: column;
+    }
+    & .contact-item {
+      padding: 0 20px;
+      @media(--small-device) {
+        padding: 10px 20px;
+      }
+    }
+  }
+  & .m-logo {
+    position: absolute;
+    left: 20px;
+    @media(--small-device) {
+      position: relative;
+      left: auto;
+    }
+  }
+}

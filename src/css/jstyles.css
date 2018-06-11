@@ -1,0 +1,11 @@
+:global html.js {
+  &.ready {
+    display: initial;
+  }
+  & body .main {
+    & section[aria-hidden="true"],
+    & article[aria-hidden="true"] {
+      display: none;
+    }
+  }
+}

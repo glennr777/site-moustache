@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+
+@import './css/normalize';
+@import './css/jstyles';
+@import './css/main-nav';
+@import './css/home';
+@import './css/intro';
+@import './css/pricing';
+@import './css/opening';
+@import './css/reviews';
+@import './css/contact';
+
+:root {
+  /* dims */
+  --min-desktop: 1170px;
+  --max-item-width: 540px;
+
+  /* colours */
+  --clr-1: rgb(29, 30, 32);
+  --clr-1-a: rgba(29, 30, 32, .7);
+  --clr-2: #404040;
+  --clr-2-a: rgba(64, 64, 64, .7);
+  --clr-3: rgb(150, 107, 97);
+  --clr-8: #0077B5;
+  --clr-10: rgb(224, 228, 230);
+
+  /* misc */
+  --borderR: 3px;
+  --easing: cubic-bezier(.55, 0, .1, 1)
+}
+
+@custom-media --small-device (width <= 480px);
+@custom-media --medium-device (width <= 768px);
+@custom-media --large-device (width > 768px);
+
+:global html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @media(--small-device) {
+    overflow-x: hidden;
+  }
+
+  & .sr-only {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  & body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    color: var(--clr-2);
+    width: 100%;
+    @media(--small-device) {
+      overflow-x: hidden;
+    }
+
+    & a {
+      color: var(--clr-2);
+    }
+
+    & h1 {
+      text-transform: uppercase;
+    }
+
+    & a {
+      text-decoration: none;
+      &.btn {
+        display: inline-flex;
+        padding: 10px 20px;
+        background: var(--clr-3);
+        color: var(--clr-10);
+        border: 1px solid var(--clr-1);
+        border-radius: 50px;
+        font-size: 0.85em;
+        font-weight: 600;
+      }
+    }
+
+    & i {
+      color: var(--clr-3);
+      &.m-logo {
+        display: block;
+        width: 3em;
+        height: 1em;
+        background-image: url('./img/assets/moustache_white.svg');
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    /* header & nav */
+    & header, & section, & aside {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      padding: 15px 0;
+      &::before {
+        display: table;
+        content: ' ';
+      }
+    }
+    & section, & aside {
+      padding: 15px 0;
+      background: var(--clr-10);
+      color: var(--clr-1);
+      & .container {
+        width: 100%;
+        max-width: var(--min-desktop);
+        height: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        &.flex-row {
+          flex-direction: row;
+        }
+        @media(--small-device) {
+          flex-direction: column;
+          max-width: 90%;
+        }
+      }
+      & h2 {
+        margin: 0;
+      }
+      & hr {
+        width: 3em;
+        border-color: var(--clr-3);
+      }
+
+      &.invert {
+        background: var(--clr-1);
+        color: var(--clr-10);
+        & a {
+          color: var(--clr-10)!important;
+        }
+      }
+    }
+
+    & .scrtop-anim {
+      & .scrtop-hide {
+        transition: 300ms var(--easing);
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      &[data-topactive="true"] .scrtop-hide {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}

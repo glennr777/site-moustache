@@ -1,0 +1,49 @@
+/* Opening times */
+#opening-times {
+  padding: 4em 0;
+  @media(--small-device) {
+    padding: 3em 0;
+  }
+  & table.opening-times {
+    & th, & td {
+      padding: 5px 10px;
+    }
+    @for $i from 0 to 6 {
+      &[data-today="$i"] td[data-day="$i"],
+      &[data-today="$i"] th[data-day="$i"] {
+        color: var(--clr-3);
+      }
+    }
+    @media(--medium-device) {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      align-items: flex-start;
+      justify-content: space-around;
+      & thead {
+        flex: 0 1 auto;
+        display: flex;
+        flex-direction: column;
+      }
+      & tbody {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        & tr {
+          flex: 1 1 auto;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      & th, & td {
+        padding: 5px;
+        justify-content: center;
+        display: flex;
+        flex: 1 1 auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+/* Pricing */
+#pricing {
+  padding: 4em 0;
+  @media(--small-device) {
+    padding: 3em 0;
+  }
+  & .container {
+    &.section-heading {
+      flex-direction: column;
+    }
+    &.flew-row {
+      justify-content: space-around;
+      align-items: center;
+    }
+    @media(--small-device) {
+      &.flex-row {
+        flex-direction: column;
+      }
+    }
+
+    & .service-box {
+      padding: 1em;
+      width: 20%;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      @media(--small-device) {
+        width: auto;
+        flex: 1 1 auto;
+      }
+      & h3 {
+        margin: 1em 0 0 0;
+        padding: 0;
+      }
+      & p {
+        margin: 0;
+        padding: 0;
+      }
+      &::after {
+        display: block;
+        content: '';
+        margin: 1em auto 0 auto;
+        width: 3em;
+        height: 0px;
+        border: 1px solid var(--clr-3);
+      }
+    }
+  }
+}

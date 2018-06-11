@@ -1,0 +1,24 @@
+/* Home */
+
+#home {
+  padding: 4em 0;
+  @media(--small-device) {
+    padding: 3em 0;
+  }
+  & p {
+    max-width: var(--max-item-width);
+    margin: 2em auto;
+  }
+  & .img-row {
+    margin: auto;
+    max-width: var(--min-desktop);
+    & img {
+      width: 30%;
+      margin: auto 2%;
+      @media(--small-device) {
+        width: 100%;
+        margin: 10px auto;
+      }
+    }
+  }
+}

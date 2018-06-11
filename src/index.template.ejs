@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%= require('html-loader!./fragments/head.ejs') %>
+  <body>
+    <%= require('html-loader!./fragments/nav.ejs') %>
+
+    <%= require('html-loader!./fragments/intro.ejs') %>
+
+    <section id="home" class="invert scrtop-anim">
+      <div class="container container-heading">
+        <h2 class="section-heading">Meanwood local family barbers</h2>
+        <hr class="light">
+        <p class="text-faded scrtop-hide">Here at moustache barbers we take pride that we have been trading as Meanwood's local family barbers for over 25 years, thank you to all our old and new customers We couldn't of done it with out you!</p>
+      </div>
+      <div class="container flex-row scrtop-hide">
+        <div class="img-row">
+          <img src="<%= require('./img/backgrounds/970x647/03.jpg') %>" class="img-responsive" alt="">
+          <img src="<%= require('./img/backgrounds/970x647/04.jpg') %>" class="img-responsive" alt="">
+        </div>
+      </div>
+    </section>
+
+
+    <%= require('html-loader!./fragments/pricing.ejs') %>
+
+    <%= require('html-loader!./fragments/opening.ejs') %>
+
+    <%= require('html-loader!./fragments/reviews.ejs') %>
+
+    <%= require('html-loader!./fragments/contact.ejs') %>
+
+  </body>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</html>
