@@ -15,19 +15,19 @@
       }
     }
     @media(--medium-device) {
-      width: 100%;
+      width: 18em;
       display: flex;
       flex-direction: row;
       flex: 1;
       align-items: flex-start;
       justify-content: space-around;
       & thead {
-        flex: 0 1 auto;
+        flex: 1 1 auto;
         display: flex;
         flex-direction: column;
       }
       & tbody {
-        flex: 1;
+        flex: 1 1 auto;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -43,6 +43,9 @@
         justify-content: center;
         display: flex;
         flex: 1 1 auto;
+        @media(--small-device) {
+          justify-content: left;
+        }
       }
     }
   }

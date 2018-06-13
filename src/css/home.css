@@ -3,7 +3,7 @@
 #home {
   padding: 4em 0;
   @media(--small-device) {
-    padding: 3em 0;
+    padding: 4em 0 3em 0;
   }
   & p {
     max-width: var(--max-item-width);
@@ -11,7 +11,6 @@
   }
   & .img-row {
     margin: auto;
-    max-width: var(--min-desktop);
     & img {
       width: 30%;
       margin: auto 2%;

@@ -43,7 +43,7 @@ import './main.css';
   }
 
   const updateScroll = () => {
-    const bY = window.scrollY + (window.innerHeight * 0.1);
+    const bY = window.scrollY + (window.innerHeight * 0.3);
     $mainNav.toggleClass('scrolled', window.scrollY > 0);
     if (screen.availWidth <= 480) $navBar.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
     $scrtopAnimSet.each((i, item) => {
@@ -51,9 +51,7 @@ import './main.css';
     });
   };
 
-  const debouceScroll = () => {
-    requestAnimationFrame(updateScroll);
-  };
+  const debouceScroll = () => requestAnimationFrame(updateScroll);
 
   const showModal = (e) => {
     if (e && e.preventDefault) e.preventDefault();
@@ -65,21 +63,16 @@ import './main.css';
 
   const hideModal = () => $modal.remove();
 
-  const onReady = () => {
-    $navButton.on('click', menuClick);
-    $bod.delegate('a', 'click', navClick);
-    if (screen.availWidth <= 480) $navBar.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
-    updateScroll();
-    $bod
-      .delegate('.portfolio-box', 'click', showModal)
-      .delegate($modal, 'click', hideModal);
-    $openingTable.attr('data-today', new Date().getDay() + 2);
-    $html.addClass('ready');
-    calcScrollers();
-  };
+  $navButton.on('click', menuClick);
+  if (screen.availWidth <= 480) $navBar.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
+  $openingTable.attr('data-today', new Date().getDay() + 2);
+  window.setTimeout(calcScrollers, 1000);
 
+  $bod
+    .delegate('.portfolio-box', 'click', showModal)
+    .delegate('a', 'click', navClick)
+    .delegate($modal, 'click', hideModal);
   $doc
-    .on('ready', onReady())
     .on('scroll', debouceScroll);
   $win
     .on('resize', calcScrollers);

@@ -1,4 +1,5 @@
 :global html.js {
+  display: none;
   &.ready {
     display: initial;
   }

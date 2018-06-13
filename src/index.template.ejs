@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%= require('html-loader!./fragments/head.ejs') %>
+  <%= require('html-loader!./fragments/header.ejs') %>
   <body>
     <%= require('html-loader!./fragments/nav.ejs') %>
 
@@ -10,12 +10,12 @@
       <div class="container container-heading">
         <h2 class="section-heading">Meanwood local family barbers</h2>
         <hr class="light">
-        <p class="text-faded scrtop-hide">Here at moustache barbers we take pride that we have been trading as Meanwood's local family barbers for over 25 years, thank you to all our old and new customers We couldn't of done it with out you!</p>
+        <p class="text-faded">Here at moustache barbers we take pride that we have been trading as Meanwood's local family barbers for over 25 years, thank you to all our old and new customers We couldn't of done it with out you!</p>
       </div>
-      <div class="container flex-row scrtop-hide">
+      <div class="container flex-row">
         <div class="img-row">
-          <img src="<%= require('./img/backgrounds/970x647/03.jpg') %>" class="img-responsive" alt="">
-          <img src="<%= require('./img/backgrounds/970x647/04.jpg') %>" class="img-responsive" alt="">
+          <img src="<%= require('./img/backgrounds/970x647/03.jpg') %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+          <img src="<%= require('./img/backgrounds/970x647/04.jpg') %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
         </div>
       </div>
     </section>
@@ -31,4 +31,7 @@
 
   </body>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script>
+    document.documentElement.className = 'js ready';
+  </script>
 </html>

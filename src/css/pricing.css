@@ -9,12 +9,13 @@
       flex-direction: column;
     }
     &.flew-row {
+      flex-direction: row;
       justify-content: space-around;
       align-items: center;
     }
     @media(--small-device) {
       &.flex-row {
-        flex-direction: column;
+        flex-wrap: wrap;
       }
     }
 
@@ -27,8 +28,16 @@
       align-items: center;
       justify-content: flex-start;
       @media(--small-device) {
-        width: auto;
+        width: 33%;
         flex: 1 1 auto;
+        &::after {
+          display: block;
+          content: '';
+          margin: 1em auto 0 auto;
+          width: 3em;
+          height: 0px;
+          border: 1px solid var(--clr-3);
+        }
       }
       & h3 {
         margin: 1em 0 0 0;
@@ -37,14 +46,6 @@
       & p {
         margin: 0;
         padding: 0;
-      }
-      &::after {
-        display: block;
-        content: '';
-        margin: 1em auto 0 auto;
-        width: 3em;
-        height: 0px;
-        border: 1px solid var(--clr-3);
       }
     }
   }
