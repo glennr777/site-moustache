@@ -16,10 +16,12 @@
     "regexYFlag": false,                        // enable the regular expression y flag
     "templateStrings": false,                   // enable template strings
     "unicodeCodePointEscapes": false,           // enable code point escapes
-    "jsx": false                                // enable JSX
+    "jsx": false,                                // enable JSX
+    "modules": true
   },
 
   "env": {
+    "es6": true,
     "browser": false,     // browser global variables.
     "node": false,        // Node.js global variables and Node.js-specific rules.
     "amd": false,         // defines require() and define() as global variables as per the amd spec.
@@ -29,6 +31,10 @@
     "jquery": false,      // jquery global variables.
     "prototypejs": false, // prototypejs global variables.
     "shelljs": false,     // shelljs global variables.
+  },
+
+  "parserOptions": {
+    "sourceType": "module",
   },
 
   "globals": {
