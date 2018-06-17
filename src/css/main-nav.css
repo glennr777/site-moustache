@@ -45,7 +45,7 @@
       outline: none;
       & i {
         color: var(--clr-3);
-        font-size: 1.25em;
+        font-size: 1.5em;
       }
     }
   }

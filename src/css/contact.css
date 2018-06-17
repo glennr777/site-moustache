@@ -1,8 +1,13 @@
 /* Contact */
 #contact {
   padding: 0;
-  @media(--small-device) {
-    padding: 3em 0;
+  background-image: url('./img/assets/moustache_white.svg');
+  background-repeat: no-repeat;
+  background-size: 3em;
+  background-position: 20px 50%;
+  @media(--medium-device) {
+    padding: 3em 0 1em 0;
+    background-position: 50% 20px;
   }
   & .container-header {
     margin: auto;

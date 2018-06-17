@@ -64,7 +64,7 @@ import './main.css';
   const hideModal = () => $modal.remove();
 
   $navButton.on('click', menuClick);
-  if (screen.availWidth <= 480) $navBar.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
+  if (window.innerWidth <= 480) $navBar.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
   $openingTable.attr('data-today', new Date().getDay() + 2);
   window.setTimeout(calcScrollers, 1000);
 
