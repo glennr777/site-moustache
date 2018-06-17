@@ -45,7 +45,7 @@ import './main.css';
   const updateScroll = () => {
     const bY = window.scrollY + (window.innerHeight * 0.3);
     $mainNav.toggleClass('scrolled', window.scrollY > 0);
-    if (screen.availWidth <= 480) $navBar.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
+    if (window.innerWidth <= 480) $navBar.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
     $scrtopAnimSet.each((i, item) => {
       if (item.dataset.topactive !== 'true') item.setAttribute('data-topactive', bY > item.dataset.top);
     });
@@ -65,7 +65,7 @@ import './main.css';
 
   $navButton.on('click', menuClick);
   if (window.innerWidth <= 480) $navBar.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
-  $openingTable.attr('data-today', new Date().getDay() + 2);
+  $openingTable.attr('data-today', new Date().getDay());
   window.setTimeout(calcScrollers, 1000);
 
   $bod

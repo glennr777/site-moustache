@@ -17,6 +17,7 @@
     "body-parser": "^1.1.2",
     "clean-webpack-plugin": "^0.1.19",
     "concurrently": "^3.5.1",
+    "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.9",
     "css-mqpacker": "^6.0.2",
     "cssnano": "^3.10.0",

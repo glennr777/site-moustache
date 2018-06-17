@@ -3,12 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: 'js/[hash]-main.js'
   },
   module: {
     rules: [
@@ -61,7 +62,12 @@ module.exports = {
       interpolate: true,
       favicon: './src/img/favicon.ico',
     }),
-    new ExtractTextPlugin("styles.css"),
+    new ExtractTextPlugin("css/[hash]-main.css"),
     new UglifyJsPlugin(),
+    new CopyWebpackPlugin([{
+      from: './src/.htaccess',
+      to: '.htaccess',
+      toType: 'file'
+    }])
   ],
 };
