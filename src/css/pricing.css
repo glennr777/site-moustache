@@ -27,6 +27,29 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
+      & i {
+        display: inline-block;
+        width: 3em;
+        height: 4em;
+        background-size: 3em;
+        background-repeat: no-repeat;
+        background-position: center;
+        &.child {
+          background-image: svg-load('../img/svg/child.svg', stroke=var(--clr-3), fill=var(--clr-3));
+        }
+        &.cut {
+          background-image: svg-load('../img/svg/cut.svg', stroke=var(--clr-3), fill=var(--clr-3));
+        }
+        &.futbol{
+          background-image: svg-load('../img/svg/futbol.svg', stroke=var(--clr-3), fill=var(--clr-3));
+        }
+        &.blind {
+          background-image: svg-load('../img/svg/blind.svg', stroke=var(--clr-3), fill=var(--clr-3));
+        }
+        &.user {
+          background-image: svg-load('../img/svg/user.svg', stroke=var(--clr-3), fill=var(--clr-3));
+        }
+      }
       @media(--small-device) {
         width: 33%;
         flex: 1 1 auto;
