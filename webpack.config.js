@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: __dirname + '/dist',
-    filename: 'js/[hash]-main.js'
+    filename: '[hash]-main.js'
   },
   module: {
     rules: [
@@ -38,7 +38,7 @@ module.exports = {
         use: [{
             loader: 'url-loader',
             options: {
-              limit: 50000, // Convert images < 8kb to base64 strings
+              limit: 8000, // Convert images < 8kb to base64 strings
               name: 'images/[hash]-[name].[ext]'
             }
         }]
@@ -47,7 +47,7 @@ module.exports = {
         use: [{
           loader: 'url-loader?mimetype=image/png',
           options: {
-            limit: 50000, // Convert images < 8kb to base64 strings
+            limit: 8000, // Convert images < 8kb to base64 strings
             name: 'images/[hash]-[name].[ext]',
           },
         }],
@@ -61,8 +61,9 @@ module.exports = {
       inject: 'body',
       interpolate: true,
       favicon: './src/img/favicon.ico',
+
     }),
-    new ExtractTextPlugin("css/[hash]-main.css"),
+    new ExtractTextPlugin("[hash]-main.css"),
     new UglifyJsPlugin(),
     new CopyWebpackPlugin([{
       from: './src/.htaccess',

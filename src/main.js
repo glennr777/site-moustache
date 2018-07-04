@@ -10,7 +10,7 @@ import './main.css';
   const $navBar = $('#navBar');
   const $navButton = $('#navButton');
   const $openingTable = $('#opening-times-table');
-  const $modal = $('<div aria-hidden="true" id="modal"><img /></div>');
+  const $modal = $('#popup');
   const $scrtopAnimSet = $('.scrtop-anim');
 
   const CLASSES = {
@@ -19,7 +19,7 @@ import './main.css';
 
   const ARIA = {
     HIDDEN: 'aria-hidden',
-    HIDDEN_TRUE: 'hidden',
+    HIDDEN_TRUE: 'true',
   };
 
   const toggleMenu = (to) => {
@@ -61,7 +61,7 @@ import './main.css';
     return false;
   };
 
-  const hideModal = () => $modal.remove();
+  const hideModal = () => $modal.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
 
   $navButton.on('click', menuClick);
   if (window.innerWidth <= 480) $navBar.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
@@ -71,9 +71,11 @@ import './main.css';
   $bod
     .delegate('.portfolio-box', 'click', showModal)
     .delegate('a', 'click', navClick)
-    .delegate($modal, 'click', hideModal);
+    .delegate('#close', 'click', hideModal);
   $doc
     .on('scroll', debouceScroll);
   $win
     .on('resize', calcScrollers);
+
+  setTimeout(() => $modal.attr(ARIA.HIDDEN, ''), 1000);
 })(jQuery);

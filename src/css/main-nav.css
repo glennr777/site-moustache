@@ -44,8 +44,14 @@
       border: none;
       outline: none;
       & i {
-        color: var(--clr-3);
+        background: svg-load('../img/svg/bars.svg', fill=var(--clr-3));
+        display: block;
+        width: 2em;
+        height: 2em;
         font-size: 1.5em;
+        background-size: 1.3em;
+        background-repeat: no-repeat;
+        background-position: center;
       }
     }
   }
