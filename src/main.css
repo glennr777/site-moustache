@@ -8,6 +8,7 @@
 @import './css/opening';
 @import './css/reviews';
 @import './css/contact';
+@import './css/popup';
 
 :root {
   /* dims */
