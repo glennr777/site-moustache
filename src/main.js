@@ -71,7 +71,7 @@ import './main.css';
   $bod
     .delegate('.portfolio-box', 'click', showModal)
     .delegate('a', 'click', navClick)
-    .delegate('#close', 'click', hideModal);
+    .delegate('#close, #popup', 'click', hideModal);
   $doc
     .on('scroll', debouceScroll);
   $win
