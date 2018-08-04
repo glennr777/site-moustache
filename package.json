@@ -8,7 +8,8 @@
     "webpack-watch": "webpack",
     "webpack-prod": "webpack -p",
     "dev": "concurrently --kill-others \"npm run webpack-watch\" \"npm run start\"",
-    "prod": "concurrently --kill-others \"npm run webpack-prod\" \"npm run start\""
+    "prod": "concurrently --kill-others \"npm run webpack-prod\" \"npm run start\"",
+    "start:dev": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
@@ -50,7 +51,8 @@
     "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^0.6.2",
     "webp-loader": "^0.4.0",
-    "webpack": "^3.12.0"
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "3.0.0"
   },
   "bin": {
     "simple-server": "./start.js"
