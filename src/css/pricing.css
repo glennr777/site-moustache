@@ -49,6 +49,9 @@
         &.user {
           background-image: svg-load('../img/svg/user.svg', stroke=var(--clr-3), fill=var(--clr-3));
         }
+        &.meh-blank {
+          background-image: svg-load('../img/svg/meh-blank.svg', stroke=var(--clr-3), fill=var(--clr-3));
+        }
       }
       @media(--small-device) {
         width: 33%;
