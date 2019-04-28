@@ -50,6 +50,7 @@
   & body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
+    font-display: swap;
     margin: 0 auto;
     padding: 0;
     position: relative;
