@@ -143,6 +143,18 @@
           color: var(--clr-10)!important;
         }
       }
+      
+      & .img-row {
+        margin: auto;
+        & img {
+          width: 30%;
+          margin: auto 2%;
+          @media(--small-device) {
+            width: 100%;
+            margin: 10px auto;
+          }
+        }
+      }
     }
 
     & .scrtop-anim {
