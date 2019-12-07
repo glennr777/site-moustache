@@ -2,7 +2,6 @@
 <html lang="en">
   <%= require('html-loader!./fragments/header.ejs') %>
   <body>
-    <%= require('html-loader!./fragments/popup.ejs') %>
     <%= require('html-loader!./fragments/nav.ejs') %>
     <%= require('html-loader!./fragments/intro.ejs') %>
     <section id="home" class="invert scrtop-anim">
@@ -13,8 +12,8 @@
       </div>
       <div class="container flex-row">
         <div class="img-row">
-          <img src="<%= require('./img/backgrounds/970x647/03.jpg') %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-          <img src="<%= require('./img/backgrounds/970x647/04.jpg') %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+          <img src="<%= require('./img/backgrounds/970x647/03.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+          <img src="<%= require('./img/backgrounds/970x647/04.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
         </div>
       </div>
     </section>
@@ -24,12 +23,12 @@
     <section id="gallery" class="invert scrtop-anim">
         <div class="container flex-row">
           <div class="img-row">
-            <img src="<%= require('./img/backgrounds/970x647/05.jpg') %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-            <img src="<%= require('./img/backgrounds/970x647/06.jpg') %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-            <img src="<%= require('./img/backgrounds/970x647/07.jpg') %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-            <img src="<%= require('./img/backgrounds/970x647/08.jpg') %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-            <img src="<%= require('./img/backgrounds/970x647/09.jpg') %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-            <img src="<%= require('./img/backgrounds/970x647/10.jpg') %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+            <img src="<%= require('./img/backgrounds/970x647/05.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+            <img src="<%= require('./img/backgrounds/970x647/06.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+            <img src="<%= require('./img/backgrounds/970x647/07.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+            <img src="<%= require('./img/backgrounds/970x647/08.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+            <img src="<%= require('./img/backgrounds/970x647/09.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+            <img src="<%= require('./img/backgrounds/970x647/10.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
           </div>
         </div>
       </section>

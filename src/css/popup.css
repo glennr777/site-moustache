@@ -18,7 +18,7 @@
   align-items: center;
   &[aria-hidden="true"] {
     opacity: 0;
-    z-index: 0;
+    z-index: 0;1
     & .content {
       opacity: 0;
       transform: translateY(-100px) scale(0.5);

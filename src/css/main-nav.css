@@ -44,7 +44,7 @@
       border: none;
       outline: none;
       & i {
-        background: svg-load('../img/svg/bars.svg', fill=var(--clr-3));
+        background: svg-load('../img/svg/bars.svg', fill=rgb(150, 107, 97));
         display: block;
         width: 2em;
         height: 2em;

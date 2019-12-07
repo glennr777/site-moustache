@@ -35,22 +35,22 @@
         background-repeat: no-repeat;
         background-position: center;
         &.child {
-          background-image: svg-load('../img/svg/child.svg', stroke=var(--clr-3), fill=var(--clr-3));
+          background-image: svg-load('../img/svg/child.svg', stroke=rgb(150, 107, 97), fill=rgb(150, 107, 97));
         }
         &.cut {
-          background-image: svg-load('../img/svg/cut.svg', stroke=var(--clr-3), fill=var(--clr-3));
+          background-image: svg-load('../img/svg/cut.svg', stroke=rgb(150, 107, 97), fill=rgb(150, 107, 97));
         }
         &.futbol{
-          background-image: svg-load('../img/svg/futbol.svg', stroke=var(--clr-3), fill=var(--clr-3));
+          background-image: svg-load('../img/svg/futbol.svg', stroke=rgb(150, 107, 97), fill=rgb(150, 107, 97));
         }
         &.blind {
-          background-image: svg-load('../img/svg/blind.svg', stroke=var(--clr-3), fill=var(--clr-3));
+          background-image: svg-load('../img/svg/blind.svg', stroke=rgb(150, 107, 97), fill=rgb(150, 107, 97));
         }
         &.user {
-          background-image: svg-load('../img/svg/user.svg', stroke=var(--clr-3), fill=var(--clr-3));
+          background-image: svg-load('../img/svg/user.svg', stroke=rgb(150, 107, 97), fill=rgb(150, 107, 97));
         }
         &.meh-blank {
-          background-image: svg-load('../img/svg/meh-blank.svg', stroke=var(--clr-3), fill=var(--clr-3));
+          background-image: svg-load('../img/svg/meh-blank.svg', stroke=rgb(150, 107, 97), fill=rgb(150, 107, 97));
         }
       }
       @media(--small-device) {
@@ -62,7 +62,7 @@
           margin: 1em auto 0 auto;
           width: 3em;
           height: 0px;
-          border: 1px solid var(--clr-3);
+          border: 1px solid rgb(150, 107, 97);
         }
       }
       & h3 {
