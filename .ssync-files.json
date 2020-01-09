@@ -1,0 +1,14 @@
+{
+    "paths": [
+        { 
+            "local":"dist/*.*", 
+            "remote":"/root/testing"
+        }        
+    ],
+    "remote_host":"ftp.moustachebarbers.com",
+    "remote_user":"philipm13@moustachebarbers.com",
+    "ignore": [
+        ".git", "node_modules"
+    ],
+    "scpexec":"%SystemRoot%\\System32\\OpenSSH\\scp.exe"
+}
