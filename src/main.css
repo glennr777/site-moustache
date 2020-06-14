@@ -72,6 +72,10 @@ html {
 
     & a {
       text-decoration: none;
+      &.link {
+        text-decoration: underline;
+        font-weight: bold;
+      }
       &.btn {
         display: inline-flex;
         padding: 10px 20px;

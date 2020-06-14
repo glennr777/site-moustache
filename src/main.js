@@ -77,5 +77,5 @@ import './main.css';
   $win
     .on('resize', calcScrollers);
 
-  // setTimeout(() => $modal.attr(ARIA.HIDDEN, ''), 1000);
+  setTimeout(() => $modal.attr(ARIA.HIDDEN, ''), 1000);
 })(jQuery);

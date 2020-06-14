@@ -18,7 +18,7 @@
   align-items: center;
   &[aria-hidden="true"] {
     opacity: 0;
-    z-index: 0;1
+    z-index: -1;
     & .content {
       opacity: 0;
       transform: translateY(-100px) scale(0.5);
@@ -43,7 +43,7 @@
       display: block;
       width: 2em;
       height: 2em;
-      background-image: svg-load('../img/svg/clock.svg', stroke=var(--clr-3), fill=var(--clr-3));
+      background-image: svg-load('../img/svg/bullhorn.svg', stroke=var(--clr-3), fill=var(--clr-3));
       background-size: 2em;
     }
   }
