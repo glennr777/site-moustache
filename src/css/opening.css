@@ -1,6 +1,11 @@
 /* Opening times */
 #opening-times {
   padding: 4em 0;
+  & a[href] {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
   @media(--small-device) {
     padding: 3em 0;
   }

@@ -53,4 +53,9 @@
     top: 20px;
     right: 20px;
   }
+
+  & a[href] {
+    font-weight: bold;
+    text-decoration: underline;
+  }
 }
