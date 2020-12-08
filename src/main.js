@@ -1,4 +1,5 @@
 import jQuery from 'jQuery';
+import Cookies from 'js-cookie';
 import './main.css';
 
 (($) => {
@@ -11,6 +12,7 @@ import './main.css';
   const $navButton = $('#navButton');
   const $openingTable = $('#opening-times-table');
   const $modal = $('#popup');
+  const $cookies = $('#cookies');
   const $scrtopAnimSet = $('.scrtop-anim');
 
   const CLASSES = {
@@ -20,6 +22,12 @@ import './main.css';
   const ARIA = {
     HIDDEN: 'aria-hidden',
     HIDDEN_TRUE: 'true',
+  };
+
+  const COOKIES = {
+    DATA_TAG: 'data-cookie',
+    NAME: 'cookies',
+    TRUE: '1',
   };
 
   const toggleMenu = (to) => {
@@ -53,21 +61,57 @@ import './main.css';
 
   const debouceScroll = () => requestAnimationFrame(updateScroll);
 
+  const checkModal = () => {
+    if (Cookies.get($modal.attr(COOKIES.DATA_TAG)) !== COOKIES.TRUE) {
+      showModal();
+    } 
+  };
+  
   const showModal = (e) => {
     if (e && e.preventDefault) e.preventDefault();
-    $modal.find('img').attr({ src: e.currentTarget.href });
-    $modal.attr({ 'aria-hidden': '' });
-    $bod.append($modal);
+    $modal.attr({
+      [ARIA.HIDDEN]: '',
+    });
     return false;
   };
 
-  const hideModal = () => $modal.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
+  const hideModal = () => {
+    $modal.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
+    if (checkCookiesEnabled()) {
+      Cookies.set($modal.attr(COOKIES.DATA_TAG), COOKIES.TRUE);
+    }
+  }
+
+  const checkCookieMessage = () => {
+    if (!checkCookiesEnabled()) {
+      showCookie();
+    }
+  }
+
+  const showCookie = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    $cookies.attr(ARIA.HIDDEN, '');
+  }
+
+  const hideCookie = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    $cookies.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
+  };
+
+  const acceptCookie = (e) => {
+    Cookies.set(COOKIES.NAME, COOKIES.TRUE);
+    
+    hideCookie(e);
+  };
+
+  const checkCookiesEnabled = () =>
+    Cookies.get(COOKIES.NAME) === COOKIES.TRUE;
 
   $navButton.on('click', menuClick);
   if (window.innerWidth <= 480) $navBar.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
+  
   $openingTable.attr('data-today', new Date().getDay());
-  window.setTimeout(calcScrollers, 1000);
-
+  
   $bod
     .delegate('.portfolio-box', 'click', showModal)
     .delegate('a', 'click', navClick)
@@ -76,6 +120,12 @@ import './main.css';
     .on('scroll', debouceScroll);
   $win
     .on('resize', calcScrollers);
+  $cookies
+    .delegate('#accept', 'click', acceptCookie)
+    .delegate('#notaccept', 'click', hideCookie);
 
-  setTimeout(() => $modal.attr(ARIA.HIDDEN, ''), 1000);
+  window.setTimeout(checkCookieMessage, 500);
+  window.setTimeout(checkModal, 750);
+  window.setTimeout(calcScrollers, 1000);
+
 })(jQuery);

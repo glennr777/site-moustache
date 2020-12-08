@@ -9,6 +9,7 @@
 @import '/css/reviews';
 @import '/css/contact';
 @import '/css/popup';
+@import '/css/cookies';
 
 :root {
   /* dims */
@@ -76,16 +77,18 @@ html {
         text-decoration: underline;
         font-weight: bold;
       }
-      &.btn {
-        display: inline-flex;
-        padding: 10px 20px;
-        background: var(--clr-3);
-        color: var(--clr-10);
-        border: 1px solid var(--clr-1);
-        border-radius: 50px;
-        font-size: 0.85em;
-        font-weight: 600;
-      }
+    }
+
+    & .btn {
+      display: inline-flex;
+      padding: 10px 20px;
+      background: var(--clr-3);
+      color: var(--clr-10);
+      border: 1px solid var(--clr-1);
+      border-radius: 50px;
+      font-size: 0.85em;
+      font-weight: 600;
+      cursor: pointer;
     }
 
     & i {

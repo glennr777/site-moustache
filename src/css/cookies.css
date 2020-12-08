@@ -1,0 +1,58 @@
+/* cookies */
+#cookies {
+  &::before {
+    content: none;
+  }
+  transition: 300ms var(--easing);
+  transition-delay: 500ms;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--clr-1);
+  border-top: 1px solid var(--clr-3);
+  color: var(--clr-10);
+  &[aria-hidden="true"] {
+    opacity: 0;
+    z-index: -1;
+    & .content {
+      opacity: 0;
+      transform: translateY(-100px) scale(0.5);
+    }
+  }
+
+  & img {
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  & .content {
+    transform-origin: 50% 50%;
+    padding: 20px;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      background-image: svg-load('../img/svg/bullhorn.svg', stroke=rgb(150, 107, 97), fill=rgb(150, 107, 97));
+      background-size: 2em;
+    }
+  }
+
+  & #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  & a[href] {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
