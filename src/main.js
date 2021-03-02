@@ -30,6 +30,8 @@ import './main.css';
     TRUE: '1',
   };
 
+  const COOKIE_PARAMS = { expires: 365 };
+
   const toggleMenu = (to) => {
     const set = to !== undefined ? to : $navBar.attr(ARIA.HIDDEN) === ARIA.HIDDEN_TRUE;
     $navBar.attr(ARIA.HIDDEN, set ? '' : ARIA.HIDDEN_TRUE);
@@ -78,7 +80,7 @@ import './main.css';
   const hideModal = () => {
     $modal.attr(ARIA.HIDDEN, ARIA.HIDDEN_TRUE);
     if (checkCookiesEnabled()) {
-      Cookies.set($modal.attr(COOKIES.DATA_TAG), COOKIES.TRUE);
+      Cookies.set($modal.attr(COOKIES.DATA_TAG), COOKIES.TRUE, COOKIE_PARAMS);
     }
   }
 
@@ -99,7 +101,7 @@ import './main.css';
   };
 
   const acceptCookie = (e) => {
-    Cookies.set(COOKIES.NAME, COOKIES.TRUE);
+    Cookies.set(COOKIES.NAME, COOKIES.TRUE, COOKIE_PARAMS);
     
     hideCookie(e);
   };

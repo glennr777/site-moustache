@@ -13,6 +13,11 @@
     & th, & td {
       padding: 5px 10px;
     }
+    & caption {
+      font-size: 1.2em;
+      font-weight: bold;
+      padding-bottom: 0.75em;
+    }
     @for $i from 0 to 6 {
       &[data-today="$i"] td[data-day="$i"],
       &[data-today="$i"] th[data-day="$i"] {
