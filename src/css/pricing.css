@@ -52,6 +52,9 @@
         &.meh-blank {
           background-image: svg-load('../img/svg/meh-blank.svg', stroke=rgb(150, 107, 97), fill=rgb(150, 107, 97));
         }
+        &.plus-circle {
+          background-image: svg-load('../img/svg/plus-circle.svg', stroke=rgb(150, 107, 97), fill=rgb(150, 107, 97));
+        }
       }
       @media(--small-device) {
         width: 33%;
