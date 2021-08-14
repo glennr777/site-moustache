@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%= require('html-loader!./fragments/header.ejs') %>
+  <% include ./fragments/header.ejs %>
   <body>
     <div id="page-top"/>
-    <%= require('html-loader!./fragments/nav.ejs') %>
-    <%= require('html-loader!./fragments/intro.ejs') %>
+    <% include ./fragments/nav.ejs %>
+    <% include ./fragments/intro.ejs %>
     <section id="home" class="invert scrtop-anim">
       <div class="container container-heading">
         <h2 class="section-heading">Meanwood local family barbers</h2>
@@ -18,9 +18,9 @@
         </div>
       </div>
     </section>
-    <%= require('html-loader!./fragments/pricing.ejs') %>
-    <%= require('html-loader!./fragments/opening.ejs') %>
-    <%= require('html-loader!./fragments/reviews.ejs') %>
+    <% include ./fragments/pricing.ejs %>
+    <% include ./fragments/opening.ejs %>
+    <% include ./fragments/reviews.ejs %>
     <section id="gallery" class="invert scrtop-anim">
       <div class="container flex-row">
         <div class="img-row">
@@ -33,8 +33,8 @@
         </div>
       </div>
     </section>
-    <%= require('html-loader!./fragments/contact.ejs') %>
-    <%= require('html-loader!./fragments/popup.ejs') %>
-    <%= require('html-loader!./fragments/cookies.ejs') %>
+    <% include ./fragments/contact.ejs %>
+    <% include ./fragments/popup.ejs %>
+    <% include ./fragments/cookies.ejs %>
   </body>
 </html>

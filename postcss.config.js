@@ -1,5 +1,8 @@
 module.exports = {
   plugins: {
+    'postcss-assets': {
+      loadPaths: ['/src/img/']
+    },
     'postcss-import': {},
     'postcss-preset-env': {
       stage: 3,
@@ -10,7 +13,6 @@ module.exports = {
       importFrom: './src/main.css',
     },
     'postcss-for': {},
-    'postcss-inline-svg': {},
-    'postcss-font-magician': {},
+    'postcss-inline-svg': {}
   },
 };

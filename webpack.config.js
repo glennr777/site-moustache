@@ -15,19 +15,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development',
-            },
-          },
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
         ]
       },
       {
         test: /\.ico$\.woff$|\.ttf$|\.wav$|\.mp3$/,
-        loader: 'file-loader?name=[name].[ext]'  // <-- retain original file name
+        loader: 'file-loader'  // <-- retain original file name
        },
       {
         test: /\.svg$/,
@@ -37,6 +32,7 @@ module.exports = {
       //   test: /\fragments\/.*\.ejs$/,
       //   loader: 'ejs-html-loader',
       // },
+      { test: /\.ejs$/, use: 'ejs-compiled-loader' },
       //{ test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
       {
         test: /\.(jpg|png)$/,
@@ -67,17 +63,19 @@ module.exports = {
       inject: 'body',
       interpolate: true,
       favicon: './src/img/favicon.ico',
-
+      esModule: false,
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: '[hash]-[name].css',
     }),
-    new CopyWebpackPlugin([{
-      from: './src/.htaccess',
-      to: '.htaccess',
-      toType: 'file'
-    }])
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: './src/.htaccess',
+        to: '.htaccess',
+        toType: 'file',
+      }],
+    })
   ],
 };
