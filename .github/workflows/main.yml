@@ -38,7 +38,3 @@ jobs:
         username: ${{ secrests.FTP_USER_NAME }}
         password: ${{ secrets.FTP_PASS_WORD }}
         dry-run: true
-        exclude:
-          - **/.git*
-          - **/.git*/**
-          - **/node_modules/**
