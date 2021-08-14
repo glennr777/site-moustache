@@ -1,4 +1,4 @@
-import jQuery from 'jQuery';
+import $ from 'cash-dom';
 import Cookies from 'js-cookie';
 import './main.css';
 
@@ -115,19 +115,19 @@ import './main.css';
   $openingTable.attr('data-today', new Date().getDay());
   
   $bod
-    .delegate('.portfolio-box', 'click', showModal)
-    .delegate('a', 'click', navClick)
-    .delegate('#close, #popup', 'click', hideModal);
+    .on('.portfolio-box', 'click', showModal)
+    .on('a', 'click', navClick)
+    .on('#close, #popup', 'click', hideModal);
   $doc
     .on('scroll', debouceScroll);
   $win
     .on('resize', calcScrollers);
   $cookies
-    .delegate('#accept', 'click', acceptCookie)
-    .delegate('#notaccept', 'click', hideCookie);
+    .on('#accept', 'click', acceptCookie)
+    .on('#notaccept', 'click', hideCookie);
 
   window.setTimeout(checkCookieMessage, 500);
   window.setTimeout(checkModal, 750);
   window.setTimeout(calcScrollers, 1000);
 
-})(jQuery);
+})($);

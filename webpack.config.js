@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: path.resolve('./src/main.js'),
   output: {
     path: __dirname + '/dist',
     filename: '[hash]-main.js'
