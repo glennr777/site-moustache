@@ -4,42 +4,15 @@
     <hr class="primary">
   </div>
   <div class="container flex-row scrtop-anim">
+    <% for (let i = 0; i < data.prices.length; i++) { %>
     <div class="service-box scrtop-hide">
-      <i class="cut"></i>
-      <h3>Haircut</h3>
-      <p class="text-muted">&pound;12.50</p>
+      <i class="<%= data.prices[i].icon %>"></i>
+      <h3><%= data.prices[i].type %></h3>
+      <% if (data.prices[i].note) { %>
+      <p class="text-muted small"><%= data.prices[i].note %></p>
+      <% } %>
+      <p class="text-muted">&pound;<%= data.prices[i].cost %></p>
     </div>
-    <div class="service-box scrtop-hide">
-      <i class="user"></i>
-      <h3>Blade all over</h3>
-      <p class="text-muted">&pound;8.00</p>
-    </div>
-    <div class="service-box scrtop-hide">
-      <i class="blind"></i>
-      <h3>Over 65&apos;s</h3>
-      <p class="text-muted small">(Monday - Friday)</p>
-      <p class="text-muted">&pound;8.50</p>
-    </div>
-    <div class="service-box scrtop-hide">
-      <i class="child"></i>
-      <h3>Kids (under 12)</h3>
-      <p class="text-muted">&pound;8.00</p>
-    </div>
-    <div class="service-box scrtop-hide">
-      <i class="futbol"></i>
-      <h3>Kids (12 - 16)</h3>
-      <p class="text-muted">&pound;8.50</p>
-    </div>
-    <div class="service-box scrtop-hide">
-      <i class="meh-blank"></i>
-      <h3>Beard</h3>
-      <p class="text-muted">&pound;6.00</p>
-    </div>
-    <div class="service-box scrtop-hide">
-      <i class="plus-circle"></i>
-      <h3>Skinfade</h3>
-      <p class="text-muted small">(Extra)</p>
-      <p class="text-muted">&pound;1.50</p>
-    </div>
+    <% } %>
   </div>
 </section>

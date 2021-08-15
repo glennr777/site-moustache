@@ -1,8 +1,11 @@
 const path = require('path');
+const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const site_data = JSON.parse(fs.readFileSync('./site-data.json', 'utf8'));
 
 module.exports = {
   entry: path.resolve('./src/main.js'),
@@ -64,6 +67,9 @@ module.exports = {
       interpolate: true,
       favicon: './src/img/favicon.ico',
       esModule: false,
+      templateParameters: {
+        data: site_data,
+      }
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output

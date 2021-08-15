@@ -1,43 +1,33 @@
 <section id="opening-times" class="invert">
+  <% if (data.hours_notice) { %>
   <div class="container container-heading">
-    <p>We&apos;ll be resuming the normal walk-in service in our waiting area (no longer taking appointments) from the <strong>12th&nbsp;April</strong>.</p>
+    <p><%= data.hours_notice %></p>
     <hr class="primary">
   </div>
+  <% } %>
   <div class="container scrtop-anim">
     <h4>Opening hours</h4>
     <table id="opening-times-table" class="opening-times scrtop-hide">
       <thead>
         <tr>
           <th scope="row">Day</th>
-          <th data-day="1" scope="col">Monday</th>
-          <th data-day="2" scope="col">Tuesday</th>
-          <th data-day="3" scope="col">Wednesday</th>
-          <th data-day="4" scope="col">Thursday</th>
-          <th data-day="5" scope="col">Friday</th>
-          <th data-day="6" scope="col">Saturday</th>
-          <th data-day="0" scope="col">Sunday</th>
+          <% for (let i = 0; i < data.hours.length; i++) { %>
+          <th data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= data.hours[i].day %></th>
+          <% } %>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th scope="row">Open</th>
-          <td data-day="1">09:00</td>
-          <td data-day="2">09:00</td>
-          <td data-day="3">09:00</td>
-          <td data-day="4">09:00</td>
-          <td data-day="5">09:00</td>
-          <td data-day="6">08:30</td>
-          <td data-day="0">Closed</td>
+          <% for (let i = 0; i < data.hours.length; i++) { %>
+          <td data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= data.hours[i].open %></th>
+          <% } %>
         </tr>
         <tr>
           <th scope="row">Close</th>
-          <td data-day="1">17:30</td>
-          <td data-day="2">17:30</td>
-          <td data-day="3">17:30</td>
-          <td data-day="4">17:30</td>
-          <td data-day="5">17:30</td>
-          <td data-day="6">16:00</td>
-          <td data-day="0">-</td>
+          <% for (let i = 0; i < data.hours.length; i++) { %>
+          <td data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= data.hours[i].close %></th>
+          <% } %>
         </tr>
       </tbody>
     </table>

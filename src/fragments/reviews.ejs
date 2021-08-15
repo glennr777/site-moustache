@@ -1,3 +1,4 @@
+<% if (data.reviews.length) { %>
 <section id="reviews">
   <div class="container scrtop-anim">
     <div class="container-header">
@@ -7,20 +8,14 @@
     <div class="container-section review">
       <h3 class="scrtop-hide">Just a few of our satisfied customers</h3>
       <ul class="review-list">
+        <% for (let i = 0; i < data.reviews.length; i++) { %>
         <li class="scrtop-hide">
-          <blockquote>"Decent cuts. Good prices. Really friendly, relaxed place. Usually go on a Saturday and there's rarely a long wait. Highly recommended.."</blockquote>
-          <a class="review" target="_blank" href="https://goo.gl/maps/qD34HwReKEq">Read review</a>
+          <blockquote>"<%= data.reviews[i].quote %>"</blockquote>
+          <a class="review" target="_blank" href="<%= data.reviews[i].link %>">Read review</a>
         </li>
-        <li class="scrtop-hide">
-          <blockquote>"Been going here for around 10 years. Always had lovely, talkative staff and the prices are great value for the quality haircut you get."</blockquote>
-          <a class="review" target="_blank" href="https://goo.gl/maps/T9Cs5viJpDo">Read review</a>
-        </li>
-        <li class="scrtop-hide">
-          <blockquote>"Great shop, nice guys that work there. good decor and a haircut for under a tenner"</blockquote>
-          <a class="review" target="_blank" href="https://goo.gl/maps/DMKD5zh2En12">Read review</a>
-        </li>
+        <% } %>
       </ul>
-
     </div>
   </div>
 </section>
+<% } %>

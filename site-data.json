@@ -1,0 +1,100 @@
+{
+    "telephone": "0113 2743011",
+    "address": "2a Stonegate Road, Meanwood, Leeds, West Yorkshire",
+    "hours_notice": "We'll be resuming the normal walk-in service in our waiting area (no longer taking appointments) from the 12th April.",
+    "hours": [
+        {
+            "day": "Monday",
+            "open": "09:00",
+            "close": "17:30"
+        },
+        {
+            "day": "Tuesday",
+            "open": "09:00",
+            "close": "17:30"
+        },
+        {
+            "day": "Wednesday",
+            "open": "09:00",
+            "close": "17:30"
+        },
+        {
+            "day": "Thursday",
+            "open": "09:00",
+            "close": "17:30"
+        },
+        {
+            "day": "Friday",
+            "open": "09:00",
+            "close": "17:30"
+        },
+        {
+            "day": "Saturday",
+            "open": "08:30",
+            "close": "16:00"
+        },
+        {
+            "day": "Sunday",
+            "open": "Closed",
+            "close": "-"
+        }
+    ],
+    "prices": [
+        {
+            "type": "Haircut",
+            "cost": "12.50",
+            "note": "",
+            "icon": "cut"
+        },
+        {
+            "type": "Blade all over",
+            "cost": "8.00",
+            "note": "",
+            "icon": "user"
+        },
+        {
+            "type": "Over 65's",
+            "cost": "8.00",
+            "note": "(Monday - Friday)",
+            "icon": "blind"
+        },
+        {
+            "type": "Kids (under 12)",
+            "cost": "8.00",
+            "note": "",
+            "icon": "child"
+        },
+        {
+            "type": "Kids (12 - 16)",
+            "cost": "8.50",
+            "note": "",
+            "icon": "futbol"
+        },
+        {
+            "type": "Beard",
+            "cost": "6.00",
+            "note": "",
+            "icon": "meh-blank"
+        },
+        {
+            "type": "Skinfade",
+            "cost": "(Extra)",
+            "note": "1.50",
+            "icon": "plus-circle"
+        }
+    ],
+    "reviews": [
+        {
+            "quote": "Decent cuts. Good prices. Really friendly, relaxed place. Usually go on a Saturday and there's rarely a long wait. Highly recommended..",
+            "link": "https://goo.gl/maps/qD34HwReKEq"
+        },
+        {
+            "quote": "Been going here for around 10 years. Always had lovely, talkative staff and the prices are great value for the quality haircut you get.",
+            "link": "https://goo.gl/maps/T9Cs5viJpDo"
+        },
+        {
+            "quote": "Great shop, nice guys that work there. good decor and a haircut for under a tenner.",
+            "link": "https://goo.gl/maps/DMKD5zh2En12"
+        }
+    ]
+}
