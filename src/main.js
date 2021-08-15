@@ -123,8 +123,8 @@ import './main.css';
   $win
     .on('resize', calcScrollers);
   $cookies
-    .on('#accept', 'click', acceptCookie)
-    .on('#notaccept', 'click', hideCookie);
+    .on('click', '#accept', acceptCookie)
+    .on('click', '#notaccept', hideCookie);
 
   window.setTimeout(checkCookieMessage, 500);
   window.setTimeout(checkModal, 750);
