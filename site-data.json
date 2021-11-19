@@ -5,8 +5,8 @@
     "hours": [
         {
             "day": "Monday",
-            "open": "09:00",
-            "close": "17:30"
+            "open": "Closed",
+            "close": "-"
         },
         {
             "day": "Tuesday",
@@ -31,7 +31,7 @@
         {
             "day": "Saturday",
             "open": "08:30",
-            "close": "16:00"
+            "close": "15:00"
         },
         {
             "day": "Sunday",
