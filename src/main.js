@@ -115,9 +115,9 @@ import './main.css';
   $openingTable.attr('data-today', new Date().getDay());
   
   $bod
-    .on('.portfolio-box', 'click', showModal)
-    .on('a', 'click', navClick)
-    .on('#close, #popup', 'click', hideModal);
+    .on('click', '.portfolio-box', showModal)
+    .on('click', 'a', navClick)
+    .on('click', '#close, #popup', hideModal);
   $doc
     .on('scroll', debouceScroll);
   $win
@@ -130,4 +130,5 @@ import './main.css';
   window.setTimeout(checkModal, 750);
   window.setTimeout(calcScrollers, 1000);
 
+  console.log('running');
 })($);
