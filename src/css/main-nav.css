@@ -57,6 +57,17 @@
     }
   }
 
+  .booksy {
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--clr-2);
+    margin: auto auto auto 0;
+    @media(--small-device) {
+      margin-left: 20px;
+    }
+  }
+
   & #navBar {
     align-self: flex-end;
 
@@ -65,6 +76,7 @@
       list-style: none;
       display: flex;
     }
+
     @media(--small-device) {
       position: fixed;
       background: var(--clr-1)!important;
