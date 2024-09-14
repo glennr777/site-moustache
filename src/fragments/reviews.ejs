@@ -1,21 +1,21 @@
-<% if (data.reviews.length) { %>
-<section id="reviews">
-  <div class="container scrtop-anim">
-    <div class="container-header">
-      <h2 class="section-heading">Customer reviews</h2>
-      <hr class="primary">
+<% if (reviews.length) { %>
+  <section id="reviews">
+    <div class="container scrtop-anim">
+      <div class="container-header">
+        <h2 class="section-heading">Customer reviews</h2>
+        <hr class="primary">
+      </div>
+      <div class="container-section review">
+        <h3 class="scrtop-hide">Just a few of our satisfied customers</h3>
+        <ul class="review-list">
+          <% for (let i = 0; i < reviews.length; i++) { %>
+          <li class="scrtop-hide">
+            <blockquote>"<%= reviews[i].quote %>"</blockquote>
+            <a class="review" target="_blank" href="<%= reviews[i].link %>">Read review</a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
     </div>
-    <div class="container-section review">
-      <h3 class="scrtop-hide">Just a few of our satisfied customers</h3>
-      <ul class="review-list">
-        <% for (let i = 0; i < data.reviews.length; i++) { %>
-        <li class="scrtop-hide">
-          <blockquote>"<%= data.reviews[i].quote %>"</blockquote>
-          <a class="review" target="_blank" href="<%= data.reviews[i].link %>">Read review</a>
-        </li>
-        <% } %>
-      </ul>
-    </div>
-  </div>
-</section>
+  </section>
 <% } %>

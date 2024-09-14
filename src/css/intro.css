@@ -13,7 +13,7 @@
     background-size: contain;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-image: inline('./img/backgrounds/1920x1080/01.jpg');
+    background-image: url('./img/backgrounds/1920x1080/01.jpg?as=webp');
   }
   @media(--small-device) {
     height: 30vh;
