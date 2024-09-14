@@ -1,20 +1,15 @@
 const path = require('path');
-const fs = require('fs')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { htmlWebpackPluginTemplateCustomizer }  = require('template-ejs-loader');
+const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const TerserPlugin = require('terser-webpack-plugin');
-const data = {};
+
+const data = require('./site-data.json');
 
 module.exports = {
-  entry: path.resolve('./src/main.js'),
   output: {
-    path: __dirname + '/dist',
-    filename: '[fullhash]-main.js',
+    path: path.join(__dirname, 'dist'),
     assetModuleFilename: 'images/[hash][ext]',
     hashFunction: 'xxhash64'
   },
@@ -23,51 +18,47 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
         ]
       },
       {
-        test: /\.ico$\.woff$|\.ttf$|\.wav$|\.mp3$/,
-        loader: 'file-loader'  // <-- retain original file name
+        test: /\.(ico|woff|ttf|wav|mp3)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: '[name][ext]', // keep original filename
+        },
        },
       {
-        test: /\.svg$/,
-        loader: 'svg-url-loader'
-      },
-      // {
-      //   test: /\fragments\/.*\.ejs$/,
-      //   loader: 'ejs-html-loader',
-      // },
-      {
-        test: /\.ejs$/,
-        use: ['html-loader', 'template-ejs-loader']
-      },
-      //{ test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
-      {
-        test: /\.(jpe?g|png)$/i,
-        type: "asset",
+        test: /\.(jpe?g|png|svg)$/i,
+        type: 'asset', // inline assest < 8kb
       },
     ]
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      favicon: './src/img/favicon.ico',
-      filename: 'index.html',
-      template: htmlWebpackPluginTemplateCustomizer({
-        templatePath:'./src/index.template.ejs', 
-        templateEjsLoaderOption: {
-          data,
-        }
-      }),
-    }),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: '[fullhash]-[name].css',
-    }),
+    new HtmlBundlerPlugin({
+       entry: [
+         // here you can define many templates as entrypoint, 
+         // all source files of styles, scripts and favicon can be defined directly in template, see header.ejs
+         {
+           import: 'src/index.template.ejs',
+           filename: 'index.html', // save generated HTML into dist/index.html
+           // the `data` option to pass external data into template
+           data: {
+             // the `data` is the global object name what is used in template, e.g. data.prices
+             data,
+           },
+         },
+       ],
+       js: {
+         filename: 'js/[name].[contenthash:8].js', // JS output filename
+       },
+       css: {
+         filename: 'css/[name].[contenthash:8].css', // CSS output filename
+       },
+       preprocessor: 'ejs', // use EJS templating engine
+     }),
     new CopyWebpackPlugin({
       patterns: [{
         from: './src/.htaccess',
@@ -79,10 +70,6 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserPlugin({
-        test: /\.js(\?.*)?$/i,
-        extractComments: false,
-      }),
       new CssMinimizerPlugin({
         minimizerOptions: {
           preset: [
@@ -115,5 +102,15 @@ module.exports = {
         ],
       }),
     ],
+  },
+  // enable live reload
+  devServer: {
+    static: path.join(__dirname, 'dist'),
+    watchFiles: {
+      paths: ['src/**/*.*'],
+      options: {
+        usePolling: true,
+      },
+    },
   },
 };
