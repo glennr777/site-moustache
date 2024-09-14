@@ -10,67 +10,29 @@
       <thead>
         <tr>
           <th scope="row">Day</th>
-          <% for (let i = 0; i < data.hours.length; i++) { %>
-          <th data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= data.hours[i].day %></th>
+          <% for (let i = 0; i < hours.length; i++) { %>
+          <th data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= hours[i].day %></th>
           <% } %>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th scope="row">Open</th>
-          <% for (let i = 0; i < data.hours.length; i++) { %>
-          <td data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= data.hours[i].open %></th>
+          <% for (let i = 0; i < hours.length; i++) { %>
+          <td data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= hours[i].open %></th>
           <% } %>
         </tr>
         <tr>
           <th scope="row">Close</th>
-          <% for (let i = 0; i < data.hours.length; i++) { %>
-          <td data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= data.hours[i].close %></th>
+          <% for (let i = 0; i < hours.length; i++) { %>
+          <td data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= hours[i].close %></th>
           <% } %>
         </tr>
       </tbody>
     </table>
   </div>
-  <!-- <hr class="primary">
-  <div class="container scrtop-anim">
-    <h4>Christmas Opening hours</h4>
-    <table id="opening-times-table" class="opening-times scrtop-hide">
-      <thead>
-        <tr>
-          <th scope="row">Day</th>
-          <th scope="col">Christmas Eve</th>
-          <th scope="col">Christmas Day</th>
-          <th scope="col">Boxing Day</th>
-          <th scope="col">Dec 27th/28th</th>
-          <th scope="col">Dec 29th/30th</th>
-          <th scope="col">New Years Eve</th>
-          <th scope="col">Jan 1st to Jan 3rd</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Open</th>
-          <td scope="col">08:00</td>
-          <td scope="col">Closed</td>
-          <td scope="col">Closed</td>
-          <td scope="col">Closed</td>
-          <td scope="col">09:00</td>
-          <td scope="col">09:00</td>
-          <td scope="col">Closed</td>
-        </tr>
-        <tr>
-          <th scope="row">Close</th>
-          <td scope="col">14:00</td>
-          <td scope="col">-</td>
-          <td scope="col">-</td>
-          <td scope="col">-</td>
-          <td scope="col">17:30</td>
-          <td scope="col">15:00</td>
-          <td scope="col">-</td>
-        </tr>
-      </tbody>
-    </table> -->
-  </div>
-
+  <% if (additionalHours.enabled) { %>
+    <%- include ('./additionalhours.ejs') %>
+  <% } %>
   <br />
 </section>

@@ -4,14 +4,14 @@
     <hr class="primary">
   </div>
   <div class="container flex-row scrtop-anim">
-    <% for (let i = 0; i < data.prices.length; i++) { %>
+    <% for (let i = 0; i < prices.length; i++) { %>
     <div class="service-box scrtop-hide">
-      <i class="<%= data.prices[i].icon %>"></i>
-      <h3><%= data.prices[i].type %></h3>
-      <% if (data.prices[i].note) { %>
-      <p class="text-muted small"><%= data.prices[i].note %></p>
+      <i class="<%= prices[i].icon %>"></i>
+      <h3><%= prices[i].type %></h3>
+      <% if (prices[i].note) { %>
+      <p class="text-muted small"><%= prices[i].note %></p>
       <% } %>
-      <p class="text-muted">&pound;<%= data.prices[i].cost %></p>
+      <p class="text-muted">&pound;<%= prices[i].cost %></p>
     </div>
     <% } %>
   </div>

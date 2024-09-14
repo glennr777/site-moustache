@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <% include ./fragments/header.ejs %>
+  <% const data = require('../site-data.json') %>
+  <%- include ('./fragments/header.ejs') %>
   <body>
     <div id="page-top"/>
-    <% include ./fragments/nav.ejs %>
-    <% include ./fragments/intro.ejs %>
+    <%- include ('./fragments/nav.ejs') %>
+    <%- include ('./fragments/intro.ejs') %>
     <section id="home" class="invert scrtop-anim">
       <div class="container container-heading">
         <h2 class="section-heading">Meanwood local family barbers</h2>
@@ -13,28 +14,28 @@
       </div>
       <div class="container flex-row">
         <div class="img-row">
-          <img src="<%= require('./img/backgrounds/970x647/03.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-          <img src="<%= require('./img/backgrounds/970x647/04.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+          <img src="./img/backgrounds/970x647/03.jpg?as=webp" class="img-responsive scrtop-hide scrtop-hide-delay" alt="Barber waiting bench">
+          <img src="./img/backgrounds/970x647/04.jpg?as=webp" class="img-responsive scrtop-hide scrtop-hide-delay" alt="Barber chairs">
         </div>
       </div>
     </section>
-    <% include ./fragments/pricing.ejs %>
-    <% include ./fragments/opening.ejs %>
-    <% include ./fragments/reviews.ejs %>
+    <%- include ('./fragments/pricing.ejs', { prices: data.prices }) %>
+    <%- include ('./fragments/opening.ejs', { hours: data.hours, additionalHours: data.additionalHours }) %>
+    <%- include ('./fragments/reviews.ejs', { reviews: data.reviews }) %>
     <section id="gallery" class="invert scrtop-anim">
       <div class="container flex-row">
         <div class="img-row">
-          <img src="<%= require('./img/backgrounds/970x647/05.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-          <img src="<%= require('./img/backgrounds/970x647/06.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-          <img src="<%= require('./img/backgrounds/970x647/07.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-          <img src="<%= require('./img/backgrounds/970x647/08.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-          <img src="<%= require('./img/backgrounds/970x647/09.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
-          <img src="<%= require('./img/backgrounds/970x647/10.jpg').default %>" class="img-responsive scrtop-hide scrtop-hide-delay" alt="">
+          <img src="./img/backgrounds/970x647/05.jpg?as=webp" class="img-responsive scrtop-hide scrtop-hide-delay" alt="Mans hair cut">
+          <img src="./img/backgrounds/970x647/06.jpg?as=webp" class="img-responsive scrtop-hide scrtop-hide-delay" alt="Mans hair cut">
+          <img src="./img/backgrounds/970x647/07.jpg?as=webp" class="img-responsive scrtop-hide scrtop-hide-delay" alt="Boys hair cut">
+          <img src="./img/backgrounds/970x647/08.jpg?as=webp" class="img-responsive scrtop-hide scrtop-hide-delay" alt="Boys hair cut">
+          <img src="./img/backgrounds/970x647/09.jpg?as=webp" class="img-responsive scrtop-hide scrtop-hide-delay" alt="Mans hair cut">
+          <img src="./img/backgrounds/970x647/10.jpg?as=webp" class="img-responsive scrtop-hide scrtop-hide-delay" alt="Baby hair cut">
         </div>
       </div>
     </section>
-    <% include ./fragments/contact.ejs %>
-    <% include ./fragments/popup.ejs %>
-    <% include ./fragments/cookies.ejs %>
+    <%- include ('./fragments/contact.ejs', { address: data.address, telephone: data.telephone }) %>
+    <%- include ('./fragments/popup.ejs') %>
+    <%- include ('./fragments/cookies.ejs') %>
   </body>
 </html>
