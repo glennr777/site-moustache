@@ -1,6 +1,5 @@
 import $ from 'cash-dom';
 import Cookies from 'js-cookie';
-import './main.css';
 
 (($) => {
   const $win = $(window);
