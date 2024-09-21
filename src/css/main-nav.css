@@ -1,12 +1,16 @@
+@keyframes menuIn {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 #mainNav {
-  transform: translateY(-100px);
-  transition: all 500ms ease-out;
   background-color: var(--clr-1);
   border-bottom: 1px solid var(--clr-1);
   box-shadow: 0 2px 2px rgba(0,0,0,0.5);
-  &.scrolled {
-    transform: translateY(0);
-  }
   z-index: 1;
   display: flex;
   flex-direction: row;
@@ -16,6 +20,11 @@
   flex: 1 1 auto;
   align-items: center;
   justify-content: space-between;
+
+  animation: menuIn linear forwards;
+  animation-timeline: scroll();
+  animation-range-end: 20vh;
+
   @media(--small-device) {
     background-color: var(--clr-1);
     flex-direction: row-reverse;
@@ -24,17 +33,13 @@
 
   & a {
     padding: 10px 20px;
-    color: var(--clr-1);
+    color: var(--clr-10);
     text-transform: uppercase;
     @media(--small-device) {
       color: var(--clr-10);
       font-size: 1.25em;
     }
   }
-  &.scrolled a {
-    color: var(--clr-10);
-  }
-
 
   & button {
     display: none;

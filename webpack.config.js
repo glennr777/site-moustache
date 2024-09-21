@@ -14,8 +14,8 @@ module.exports = {
   entry: path.resolve('./src/main.js'),
   output: {
     path: __dirname + '/dist',
-    filename: '[fullhash]-main.js',
-    assetModuleFilename: 'images/[hash][ext]',
+    filename: '[name].js',
+    assetModuleFilename: 'images/[name][ext]',
     hashFunction: 'xxhash64'
   },
   module: {
@@ -66,7 +66,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: '[fullhash]-[name].css',
+      filename: '[name].css',
     }),
     new CopyWebpackPlugin({
       patterns: [{
