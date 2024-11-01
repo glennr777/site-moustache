@@ -83,37 +83,37 @@
     "prices": [
         {
             "type": "Haircut",
-            "cost": "14.50",
+            "cost": "16.00",
             "note": "",
             "icon": "cut"
         },
         {
             "type": "Blade all over",
-            "cost": "11.00",
+            "cost": "13.00",
             "note": "",
             "icon": "user"
         },
         {
             "type": "Over 65's",
-            "cost": "10.50",
+            "cost": "13.00",
             "note": "(Monday - Friday)",
             "icon": "blind"
         },
         {
             "type": "Kids (under 12)",
-            "cost": "11.00",
+            "cost": "13.00",
             "note": "",
             "icon": "child"
         },
         {
             "type": "Kids (12 - 16)",
-            "cost": "12.00",
+            "cost": "13.00",
             "note": "",
             "icon": "futbol"
         },
         {
             "type": "Beard",
-            "cost": "4.50",
+            "cost": "6.00",
             "note": "",
             "icon": "meh-blank"
         },
