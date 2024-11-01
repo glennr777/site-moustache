@@ -116,6 +116,12 @@
             "cost": "6.00",
             "note": "",
             "icon": "meh-blank"
+        },
+        {
+            "type": "Skinfade",
+            "cost": "16.50",
+            "note": "",
+            "icon": "plus-circle"
         }
     ],
     "reviews": [
