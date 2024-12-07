@@ -6,6 +6,7 @@
 @import '/css/intro';
 @import '/css/pricing';
 @import '/css/opening';
+@import '/css/additionalHours';
 @import '/css/reviews';
 @import '/css/contact';
 @import '/css/popup';
@@ -189,7 +190,7 @@ html {
       & .scrtop-hide {
         animation: scrollAnim linear forwards;
         animation-timeline: view();
-        animation-range: entry 0% cover 25%;
+        animation-range: entry 0% cover 20%;
       }
     }
   }

@@ -19,8 +19,11 @@
         </div>
       </div>
     </section>
+    <% if (data.additionalHours.enabled) { %>
+      <%- include ('./fragments/additionalhours.ejs', { additionalHours: data.additionalHours }) %>
+    <% } %>
     <%- include ('./fragments/pricing.ejs', { prices: data.prices }) %>
-    <%- include ('./fragments/opening.ejs', { hours: data.hours, additionalHours: data.additionalHours }) %>
+    <%- include ('./fragments/opening.ejs', { hours: data.hours }) %>
     <%- include ('./fragments/reviews.ejs', { reviews: data.reviews }) %>
     <section id="gallery" class="invert scrtop-anim">
       <div class="container flex-row">

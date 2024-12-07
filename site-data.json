@@ -40,12 +40,17 @@
         }
     ],
     "additionalHours": {
-        "enabled": false,
+        "enabled": true,
         "title": "Christmas Opening hours",
         "hours": [
             {
+                "day": "Monday, Dec 23rd",
+                "open": "09:00",
+                "close": "5:30"
+            },
+            {
                 "day": "Christmas Eve",
-                "open": "08:00",
+                "open": "08:30",
                 "close": "14:00"
             },
             {
@@ -59,14 +64,14 @@
                 "close": "-"
             },
             {
-                "day": "Dec 27th/28th",
-                "open": "Closed",
-                "close": "-"
+                "day": "Friday, Dec 27th",
+                "open": "09:00",
+                "close": "16:00"
             },
             {
-                "day": "Dec 29th/30th",
-                "open": "09:00",
-                "close": "17:30"
+                "day": "Saturday, Dec 28th",
+                "open": "08:30",
+                "close": "15:30"
             },
             {
                 "day": "New Years Eve",
@@ -74,7 +79,7 @@
                 "close": "15:00"
             },
             {
-                "day": "Jan 1st to Jan 3rd",
+                "day": "Jan 1st to Jan 2rd",
                 "open": "Closed",
                 "close": "-"
             }
@@ -83,45 +88,45 @@
     "prices": [
         {
             "type": "Haircut",
-            "cost": "16.00",
+            "cost": "£16.00",
             "note": "",
             "icon": "cut"
         },
         {
+            "type": "Skinfade",
+            "cost": "+£3.00",
+            "note": "",
+            "icon": "plus-circle"
+        },
+        {
             "type": "Blade all over",
-            "cost": "13.00",
+            "cost": "£13.00",
             "note": "",
             "icon": "user"
         },
         {
             "type": "Over 65's",
-            "cost": "13.00",
+            "cost": "£13.00",
             "note": "(Monday - Friday)",
             "icon": "blind"
         },
         {
             "type": "Kids (under 12)",
-            "cost": "13.00",
+            "cost": "£13.00",
             "note": "",
             "icon": "child"
         },
         {
             "type": "Kids (12 - 16)",
-            "cost": "13.00",
+            "cost": "£13.00",
             "note": "",
             "icon": "futbol"
         },
         {
             "type": "Beard",
-            "cost": "6.00",
+            "cost": "£6.00",
             "note": "",
             "icon": "meh-blank"
-        },
-        {
-            "type": "Skinfade",
-            "cost": "16.50",
-            "note": "",
-            "icon": "plus-circle"
         }
     ],
     "reviews": [

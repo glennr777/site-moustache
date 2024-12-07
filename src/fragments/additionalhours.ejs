@@ -1,29 +1,31 @@
 <% const hours = additionalHours.hours %>
-<hr class="primary">
-<div class="container scrtop-anim">
-  <h4>Christmas Opening hours</h4>
-  <table id="opening-times-table" class="opening-times scrtop-hide">
-    <thead>
-      <tr>
-        <th scope="row">Day</th>
-        <% for (let i = 0; i < hours.length; i++) { %>
-        <th data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= hours[i].day %></th>
-        <% } %>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Open</th>
-        <% for (let i = 0; i < hours.length; i++) { %>
-        <td data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= hours[i].open %></th>
-        <% } %>
-      </tr>
-      <tr>
-        <th scope="row">Close</th>
-        <% for (let i = 0; i < hours.length; i++) { %>
-        <td data-day="<%= i === 6 ? 0 : i+1 %>" scope="col"><%= hours[i].close %></th>
-        <% } %>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<section id="additional-hours" class="invert">
+  <hr class="primary">
+  <div class="container scrtop-anim">
+    <h4>Christmas Opening hours</h4>
+    <table id="additional-hours-table" class="opening-times scrtop-hide">
+      <thead>
+        <tr>
+          <th scope="row">Day</th>
+          <% for (let i = 0; i < hours.length; i++) { %>
+            <th scope="col"><%= hours[i].day %></th>
+          <% } %>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Open</th>
+          <% for (let i = 0; i < hours.length; i++) { %>
+            <td scope="col"><%= hours[i].open %></td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row">Close</th>
+          <% for (let i = 0; i < hours.length; i++) { %>
+            <td scope="col"><%= hours[i].close %></td>
+          <% } %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

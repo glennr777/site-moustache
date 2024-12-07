@@ -1,5 +1,5 @@
-/* Opening times */
-#opening-times {
+/* Additional Opening times */
+#additional-hours {
   padding: 4em 0;
   & a[href] {
     font-weight: bold;
